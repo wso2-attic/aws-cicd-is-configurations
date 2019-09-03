@@ -12,4 +12,4 @@ This repository contains the Puppet configurations WSO2 Identity Server module u
         file { "$carbon_home/$product-$product_version/repository/components/lib/${file_name}":
             mode   => '0754',
             source => "puppet:///modules/${module_name}/repository/components/lib/${file_name}",
-     
+        }
