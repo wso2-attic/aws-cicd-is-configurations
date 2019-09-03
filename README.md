@@ -3,8 +3,8 @@
 This repository contains the Puppet configurations WSO2 Identity Server module used in AWS Pipeline.
 
 ## Adding files
-1. Add the necessary files/repository/components/lib folder. 
-2. Add the file names as parameters in init.pp manifest file.
+1. Add the necessary `files/repository/components/lib` folder. 
+2. Add the file names as parameters in `init.pp` manifest file.
         
         $file_name = filename
 2. Add the following code in init.pp  manifest file.
