@@ -467,14 +467,10 @@
         <parameter name="membershipScheme">aws</parameter>
         <parameter name="accessKey"><%= @aws_access_key %></parameter>
         <parameter name="secretKey"><%= @aws_secret_key %></parameter>
-        <parameter name="securityGroup">WSO2SecurityGroup</parameter>
+        <parameter name="securityGroup"><%= @aws_security_group %></parameter>
         <parameter name="region"><%= @aws_region %></parameter>
-        <parameter name="tagKey">cluster</parameter>
-        <parameter name="tagValue">is</parameter>
-
-
-        <!--<parameter name="licenseKey">xxx</parameter>-->
-        <!--<parameter name="mgtCenterURL">http://localhost:8081/mancenter/</parameter>-->
+        <parameter name="tagKey"><%= @aws_tag_key%></parameter>
+        <parameter name="tagValue"><%= @aws_tag_value %></parameter>
 
         <!--
          The clustering domain/group. Nodes in the same group will belong to the same multicast
@@ -482,13 +478,35 @@
         -->
         <parameter name="domain">wso2.carbon.domain</parameter>
 
+        -->
+        <!-- The host name or IP address of this member -->
+        <parameter name="localMemberHost"><%= @local_member_host %></parameter>
+
+        <!--
+        The TCP port used by this member. This is the port through which other nodes will
+        contact this member
+         -->
+        <parameter name="localMemberPort">5701</parameter>
+
+        <!--
+        Properties specific to this member
+        -->
+        <parameter name="properties">
+            <property name="backendServerURL" value="https://${hostName}:${httpsPort}/services/"/>
+            <property name="mgtConsoleURL" value="https://${hostName}:${httpsPort}/"/>
+            <property name="subDomain" value="worker"/>
+        </parameter>
+
+        <!--<parameter name="licenseKey">xxx</parameter>-->
+        <!--<parameter name="mgtCenterURL">http://localhost:8081/mancenter/</parameter>-->
+
         <!-- The multicast address to be used -->
         <!--<parameter name="mcastAddress">228.0.0.4</parameter>-->
 
         <!-- The multicast port to be used -->
-        <parameter name="mcastPort">45564</parameter>
-        <parameter name="mcastTTL">100</parameter>
-        <parameter name="mcastTimeout">60</parameter>
+<!--        <parameter name="mcastPort">45564</parameter>-->
+<!--        <parameter name="mcastTTL">100</parameter>-->
+<!--        <parameter name="mcastTimeout">60</parameter>-->
 
         <!--
            The IP address of the network interface to which the multicasting has to be bound to.
@@ -496,25 +514,6 @@
         -->
         <!--
             <parameter name="mcastBindAddress">127.0.0.1</parameter>
-        -->
-        <!-- The host name or IP address of this member -->
-
-        <parameter name="localMemberHost"><%= @local_member_host %></parameter>
-
-        <!--
-            The bind adress of this member. The difference between localMemberHost & localMemberBindAddress
-            is that localMemberHost is the one that is advertised by this member, while localMemberBindAddress
-            is the address to which this member is bound to.
-        -->
-        <!--
-        <parameter name="localMemberBindAddress">127.0.0.1</parameter>
-        -->
-
-        <!--
-        The TCP port used by this member. This is the port through which other nodes will
-        contact this member
-         -->
-        <parameter name="localMemberPort">4000</parameter>
 
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
@@ -526,12 +525,13 @@
         -->
 
         <!--
-        Properties specific to this member
+            The bind adress of this member. The difference between localMemberHost & localMemberBindAddress
+            is that localMemberHost is the one that is advertised by this member, while localMemberBindAddress
+            is the address to which this member is bound to.
         -->
-        <parameter name="properties">
-            <property name="backendServerURL" value="https://${hostName}:${httpsPort}/services/"/>
-            <property name="mgtConsoleURL" value="https://${hostName}:${httpsPort}/"/>
-        </parameter>
+        <!--
+        <parameter name="localMemberBindAddress">127.0.0.1</parameter>
+        -->
 
         <!--
         Uncomment the following section to load custom Hazelcast data serializers.
