@@ -24,13 +24,8 @@ class is::params {
   $user_group_id = 802
   #check
   $hostname = 'ALB_DNS_NAME'
-  $mgt_hostname = 'ALB_DNS_NAME'
   ####
   $jdk_version = 'JDK_TYPE'
-  $aws_access_key = 'ACCESS_KEY'
-  $aws_secret_key = 'SECRET_KEY'
-  $aws_region = 'REGION_NAME'
-  $local_member_host = 'LOCAL-MEMBER-HOST'
   $http_proxy_port = '80'
   $https_proxy_port = '443'
   $product = 'wso2is'
@@ -39,6 +34,7 @@ class is::params {
   $mediation_flow_statistics = 'false'
   $broker_elb_dns_name = 'localhost'
   $is_package = '$product-$product_version.zip'
+  $is_analytics = 'localhost'
   $wso2_path="/var/lib/jenkins/workspace/$product-$product_version/${module_name}"
   $start_script_template="bin/wso2server.sh"
   $mysql_connector="mysql-connector-java-5.1.41-bin.jar"
@@ -49,9 +45,7 @@ class is::params {
     'repository/conf/carbon.xml',
     'repository/conf/axis2/axis2.xml',
     'repository/conf/user-mgt.xml',
-    'repository/conf/registry.xml',
     'repository/conf/tomcat/catalina-server.xml',
-    'repository/conf/identity/identity.xml',
     'repository/deployment/server/eventpublishers/MessageFlowConfigurationPublisher.xml',
     'repository/deployment/server/eventpublishers/MessageFlowStatisticsPublisher.xml',
   ]
@@ -108,6 +102,14 @@ class is::params {
   $transport_sender_trust_store_location = 'repository/resources/security/client-truststore.jks'
   $transport_sender_trust_store_type = 'JKS'
   $transport_sender_trust_store_password = 'wso2carbon'
+
+  $aws_access_key = 'ACCESS_KEY'
+  $aws_secret_key = 'SECRET_KEY'
+  $aws_region = 'REGION_NAME'
+  $local_member_host = 'LOCAL-MEMBER-HOST'
+  $aws_security_group = 'WSO2SecurityGroup'
+  $aws_tag_key = 'cluster'
+  $aws_tag_value = 'is'
 
   # user-mgt.xml
   $admin_username = 'admin'
