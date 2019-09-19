@@ -451,6 +451,8 @@
         -->
         <parameter name="AvoidInitiation">true</parameter>
 
+        <parameter name="clusteringPattern">nonWorkerManager</parameter>
+
         <!--
            The membership scheme used in this setup. The only values supported at the moment are
            "multicast" and "wka"
@@ -514,7 +516,7 @@
         -->
         <!--
             <parameter name="mcastBindAddress">127.0.0.1</parameter>
-
+        -->
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
             is that localMemberPort is the one that is advertised by this member, while localMemberBindPort
