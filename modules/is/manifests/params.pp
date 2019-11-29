@@ -103,9 +103,11 @@ class is::params {
   $transport_sender_trust_store_type = 'JKS'
   $transport_sender_trust_store_password = 'wso2carbon'
 
+  #------------clustering--------------
   $aws_access_key = 'ACCESS_KEY'
   $aws_secret_key = 'SECRET_KEY'
   $aws_region = 'REGION_NAME'
+  $aws_iam_role = 'IAM_ROLE'
   $local_member_host = 'LOCAL-MEMBER-HOST'
   $aws_security_group = 'WSO2SecurityGroup'
   $aws_tag_key = 'cluster'
