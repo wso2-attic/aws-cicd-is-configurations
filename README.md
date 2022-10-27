@@ -1,4 +1,8 @@
 # AWS Pipeline Puppet Configurations for WSO2 Identity Server Module
+> **Warning**
+>
+>   The CICD pipeline is deprecated.
+>
 
 This repository contains the Puppet configurations WSO2 Identity Server module used in AWS Pipeline.
 
