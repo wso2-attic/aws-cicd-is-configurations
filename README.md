@@ -1,3 +1,6 @@
+# This repository is no longer maintained.
+Issue reports and pull requests will not be attended.
+
 # AWS Pipeline Puppet Configurations for WSO2 Identity Server Module
 > **Warning**
 >
